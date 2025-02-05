@@ -1049,23 +1049,29 @@ https://blog.blockmagnates.com/detailed-explanation-of-uniswaps-erc777-re-entry-
 
 ### 20181007 SpankChain - Reentrancy
 
-### Lost: 155 $ETH
+#### Lost: ~36k USD
 
 
 ```sh
-forge test --contracts ./src/test/2018-10/SpankChain_exp.sol -vvv
+forge test ./src/test/2018-10/SpankChain_exp.sol --ignored-error-codes 5667 -vvv
 ```
-#### Contract
-[SpankChain_exp.sol](../../src/test/2018-10/SpankChain_exp.sol)
-### Link reference
 
-https://app.blocksec.com/explorer/tx/eth/0x21e9d20b57f6ae60dac23466c8395d47f42dc24628e5a31f224567a2b4effa88
+#### Contract
+
+[SpankChain_exp.sol](../../src/test/2018-10/SpankChain_exp.sol)
+
+#### Link reference
+
+https://medium.com/spankchain/we-got-spanked-what-we-know-so-far-d5ed3a0f38fe
+
+https://medium.com/@zhongqiangc/smart-contract-reentrancy-ledger-channel-e894fe647781
+
 
 ---
 
 ### 20180424 SmartMesh - Integer Overflow
 
-#### Lost: 140M
+#### Lost: ~140m USD
 
 ```sh
 forge test ./src/test/2018-04/SmartMesh_exp.sol -vvv
