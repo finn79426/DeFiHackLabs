@@ -7,6 +7,7 @@ import "forge-std/Test.sol";
 // Total Lost : ~150m USD
 //   - 514k ETH
 // Vulnerability Type : Incorrect Access Control
+// Attacked At : Mainnet, block height 4501736, 2017-11-06T14:33:47Z
 // Attacker : 0xae7168Deb525862f4FEe37d987A971b385b96952
 // Exploit Contract : N/A
 // Revenue Address : N/A
