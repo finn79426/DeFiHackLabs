@@ -1082,12 +1082,10 @@ https://app.blocksec.com/explorer/tx/eth/0x21e9d20b57f6ae60dac23466c8395d47f42dc
 
 ### 20180422 Beauty Chain - Integer Overflow
 
-#### Lost: $900 million
-
-Testing
+#### Lost: ~$900 million
 
 ```sh
-forge test --contracts ./src/test/2018-04/BEC_exp.sol -vv
+forge test ./src/test/2018-04/BEC_exp.sol -vvv
 ```
 
 #### Contract
@@ -1096,9 +1094,9 @@ forge test --contracts ./src/test/2018-04/BEC_exp.sol -vv
 
 #### Link reference
 
-https://etherscan.io/tx/0xad89ff16fd1ebe3a0a7cf4ed282302c06626c1af33221ebe0d3a470aba4a660f
+https://www.halborn.com/blog/post/arithmetic-underflow-and-overflow-vulnerabilities-in-solidity
 
-https://etherscan.io/address/0xc5d105e63711398af9bbff092d4b6769c82f793d#code
+https://medium.com/secbit-media/a-disastrous-vulnerability-found-in-smart-contracts-of-beautychain-bec-dbf24ddbc30e
 
 ---
 
@@ -1107,7 +1105,7 @@ https://etherscan.io/address/0xc5d105e63711398af9bbff092d4b6769c82f793d#code
 #### Lost: ~150m USD
 
 ```sh
-forge test ./src/test/2017-11/Parity_exp.sol -vvvv
+forge test ./src/test/2017-11/Parity_exp.sol -vvv
 ```
 
 #### Contract

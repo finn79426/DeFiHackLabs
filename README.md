@@ -1173,7 +1173,7 @@ If you appreciate our work, please consider donating. Even a small amount helps 
 
 [20180424 SmartMesh](past/2021/README.md#20180424-smartmesh---overflow)
 
-[20180422 Beauty Chain](past/2021/README.md##20180422-beauty-chain---integer-overflow)
+[20180422 Beauty Chain](past/2021/README.md#20180422-beauty-chain---integer-overflow)
 
 [20171106 Parity](past/2021/README.md#20171106-parity---incorrect-access-control)
 
