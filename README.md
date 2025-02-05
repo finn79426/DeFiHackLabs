@@ -1175,7 +1175,7 @@ If you appreciate our work, please consider donating. Even a small amount helps 
 
 [20180422 Beauty Chain](past/2021/README.md##20180422-beauty-chain---integer-overflow)
 
-[20171106 Parity](past/2021/README.md##20171106-parity---incorrect-access-control)
+[20171106 Parity](past/2021/README.md#20171106-parity---incorrect-access-control)
 
 </details>
 
