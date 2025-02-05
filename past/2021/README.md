@@ -96,7 +96,7 @@
 
 [20181007 SpankChain](#20181007-spankchain---reentrancy)
 
-[20180424 SmartMesh](#20180424-smartmesh---overflow)
+[20180424 SmartMesh](#20180424-smartmesh---integer-overflow)
 
 [20180422 Beauty Chain](#20180422-beauty-chain---integer-overflow)
 
@@ -796,23 +796,6 @@ https://twitter.com/0x000000000marc/status/1305354469354303488
 
 ---
 
-### 20180424 SmartMesh - Overflow
-
-### Lost: 140M
-
-```sh
-forge test --contracts ./src/test/2018-04/SmartMesh_exp.sol -vvv
-```
-#### Contract
-
-[SmartMesh_exp.sol](../../src/test/2018-04/SmartMesh_exp.sol)
-
-### Link reference
-
-https://cryptojobslist.com/blog/two-vulnerable-erc20-contracts-deep-dive-beautychain-smartmesh
-
----
-
 ### 20210308 DODO - Flashloan Attack
 
 #### Lost: $700,000
@@ -1077,6 +1060,26 @@ forge test --contracts ./src/test/2018-10/SpankChain_exp.sol -vvv
 ### Link reference
 
 https://app.blocksec.com/explorer/tx/eth/0x21e9d20b57f6ae60dac23466c8395d47f42dc24628e5a31f224567a2b4effa88
+
+---
+
+### 20180424 SmartMesh - Integer Overflow
+
+#### Lost: 140M
+
+```sh
+forge test ./src/test/2018-04/SmartMesh_exp.sol -vvv
+```
+
+#### Contract
+
+[SmartMesh_exp.sol](../../src/test/2018-04/SmartMesh_exp.sol)
+
+#### Link reference
+
+https://cryptojobslist.com/blog/two-vulnerable-erc20-contracts-deep-dive-beautychain-smartmesh
+
+https://cryptojobslist.com/blog/two-vulnerable-erc20-contracts-deep-dive-beautychain-smartmesh
 
 ---
 
