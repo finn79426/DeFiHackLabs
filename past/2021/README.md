@@ -100,7 +100,7 @@
 
 [20180422 Beauty Chain](#20180422-beauty-chain---integer-overflow)
 
-[20171106 Parity - 'Accidentally Killed It'](#20171106-parity---accidentally-killed-it)
+[20171106 Parity](#20171106-parity---incorrect-access-control)
 
 ### 20211221 Visor Finance - Reentrancy
 
@@ -1102,24 +1102,20 @@ https://etherscan.io/address/0xc5d105e63711398af9bbff092d4b6769c82f793d#code
 
 ---
 
-### 20171106 Parity - 'Accidentally Killed It'
+### 20171106 Parity - Incorrect Access Control
 
-#### Lost: 514k ETH
-
-Testing
+#### Lost: ~150m USD
 
 ```sh
-forge test --contracts ./src/test/2017-11/Parity_kill_exp.sol -vvvv
+forge test ./src/test/2017-11/Parity_exp.sol -vvvv
 ```
 
 #### Contract
 
-[Parity_kill.sol](../../src/test/2017-11/Parity_kill_exp.sol)
+[Parity_exp.sol](../../src/test/2017-11/Parity_exp.sol)
 
 #### Link reference
 
+https://blog.openzeppelin.com/parity-wallet-hack-reloaded
+
 https://elementus.io/blog/which-icos-are-affected-by-the-parity-wallet-bug/
-
-https://etherscan.io/tx/0x05f71e1b2cb4f03e547739db15d080fd30c989eda04d37ce6264c5686e0722c9
-
-https://etherscan.io/tx/0x47f7cff7a5e671884629c93b368cb18f58a993f4b19c2a53a8662e3f1482f690
