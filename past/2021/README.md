@@ -1029,17 +1029,15 @@ https://peckshield.medium.com/uniswap-lendf-me-hacks-root-cause-and-loss-analysi
 
 ### 20200418 UniSwapV1 - ERC777 Reentrancy
 
-#### Lost: $220,000
-
-Testing
+#### Lost: ~$250k USD
 
 ```sh
-forge test --contracts ./src/test/2020-04/uniswap-erc777.sol -vv
+forge test ./src/test/2020-04/UniswapV1_exp.sol -vvv
 ```
 
 #### Contract
 
-[uniswap-erc777.sol](../../src/test/2020-04/uniswap-erc777.sol)
+[UniswapV1_exp.sol](../../src/test/2020-04/UniswapV1_exp.sol)
 
 #### Link reference
 
