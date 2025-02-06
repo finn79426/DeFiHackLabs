@@ -1051,7 +1051,7 @@ https://blog.blockmagnates.com/detailed-explanation-of-uniswaps-erc777-re-entry-
 
 
 ```sh
-forge test ./src/test/2018-10/SpankChain_exp.sol --ignored-error-codes 5667 -vvv
+forge test ./src/test/2018-10/SpankChain_exp.sol -vvv
 ```
 
 #### Contract
