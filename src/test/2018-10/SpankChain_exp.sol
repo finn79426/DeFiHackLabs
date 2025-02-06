@@ -14,7 +14,7 @@ import "forge-std/Test.sol";
 //   - 0xc5918a927C4FB83FE99E30d6F66707F4b396900E
 // Revenue Address : 0xcf267eA3f1ebae3C29feA0A3253F94F3122C2199
 // Victim Contract : 0xf91546835f756DA0c10cFa0CDA95b15577b84aA7
-// Vulnerable Snippet : TBD https://etherscan.io/address/0xC5d105E63711398aF9bbff092d4B6769C82F793D#code#L261
+// Vulnerable Snippet : https://etherscan.io/address/0xf91546835f756da0c10cfa0cda95b15577b84aa7#code#L416
 // Attack Txs :
 //   - 0xd8d5a14f57925db1b745e2b4427c4fc1d5a59587a6c9288c3b772d7533a68876 (+0.29 ETH, height 6472826, T+21h27m37s)
 //   - 0xf120b79aa0af659d23b9824f6a68c8ccfb63cfd63b5e45f8658cee558935b45d (+1.32 ETH, height 6471261, T+15h30m57s)
@@ -26,12 +26,13 @@ import "forge-std/Test.sol";
 //
 // @Ref
 // Official : https://medium.com/spankchain/we-got-spanked-what-we-know-so-far-d5ed3a0f38fe
+// Connext : https://medium.com/connext/transparency-report-64c9e58e0a19
 // Zhongqiang Chen : https://medium.com/@zhongqiangc/smart-contract-reentrancy-ledger-channel-e894fe647781
 
 contract Attacker is Test {
     /**
-     * @dev In this PoC, we only reproduce transaction 0x21e9d20b57f6ae60dac23466c8395d47f42dc24628e5a31f224567a2b4effa88.
-     * @dev The other attack transactions basically follow the same logic; the only difference is in the calldata.
+     * @dev In this PoC, we reproduced transaction 0x21e9d20b57f6ae60dac23466c8395d47f42dc24628e5a31f224567a2b4effa88.
+     * @dev The other attack transactions follow the same logic, differing only in the calldata.
      */
 
     Exploit exploit;
