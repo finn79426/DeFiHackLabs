@@ -1009,12 +1009,10 @@ https://etherscan.io/address/0x5f58058c0ec971492166763c8c22632b583f667f
 
 ### 20200419 LendfMe - ERC777 Reentrancy
 
-#### Lost: $25,000,000
-
-Testing
+#### Lost: ~25m USD
 
 ```sh
-forge test --contracts ./src/test/2020-04/LendfMe_exp.sol -vv
+forge test ./src/test/2020-04/LendfMe_exp.sol -vv
 ```
 
 #### Contract
