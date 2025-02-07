@@ -989,8 +989,6 @@ https://etherscan.io/tx/0x013be97768b702fe8eccef1a40544d5ecb3c1961ad5f87fee4d16f
 
 ### 20200618 Bancor Protocol - Access Control
 
-Testing
-
 ```sh
 forge test --contracts ./src/test/2020-06/Bancor_exp.sol -vv
 ```
@@ -1003,7 +1001,7 @@ forge test --contracts ./src/test/2020-06/Bancor_exp.sol -vv
 
 https://blog.bancor.network/bancors-response-to-today-s-smart-contract-vulnerability-dc888c589fe4
 
-https://etherscan.io/address/0x5f58058c0ec971492166763c8c22632b583f667f
+https://medium.com/1inch-network/bancor-network-hack-2020-3c71444fd59d
 
 ---
 
