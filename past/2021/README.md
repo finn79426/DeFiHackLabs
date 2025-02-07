@@ -1017,7 +1017,7 @@ forge test ./src/test/2020-04/LendfMe_exp.sol -vv
 
 #### Contract
 
-[LendfMe_exp](../../src/test/2020-04/LendfMe_exp.sol)
+[LendfMe_exp.sol](../../src/test/2020-04/LendfMe_exp.sol)
 
 #### Link reference
 

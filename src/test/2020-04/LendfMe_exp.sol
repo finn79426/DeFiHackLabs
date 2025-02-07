@@ -38,7 +38,6 @@ import "forge-std/Test.sol";
 // @Ref
 // PeckShield : https://peckshield.medium.com/uniswap-lendf-me-hacks-root-cause-and-loss-analysis-50f3263dcc09
 
-
 contract Attakcer is Test {
     
     IMBTC private constant imBTC = IMBTC(0x3212b29E33587A00FB1C83346f5dBFA69A458923);
@@ -90,8 +89,6 @@ contract Attakcer is Test {
         console.log("------------------------------------------------------------------------------------------");
         console.log("[After Attack] imBTC.balanceOf(address(this)) = %8e", imBTC.balanceOf(address(this)));
     }
-
-    receive() external payable {}
 }
 
 
@@ -150,12 +147,10 @@ interface IMoneyMarket {
     function withdraw(address asset, uint256 requestedAmount) external returns (uint256);
 }
 
-
 interface IMBTC {
     function approve(address spender, uint256 value) external returns (bool);
     function balanceOf(address who) external view returns (uint256);
     function exchangeRate() external view returns (uint256);
-
 }
 
 interface IERC1820Registry {
