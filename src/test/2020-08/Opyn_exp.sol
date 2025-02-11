@@ -5,7 +5,7 @@ import "forge-std/Test.sol";
 
 // @KeyInfo
 // Total Lost : ~370k USD
-//   - Check https://docs.google.com/spreadsheets/d/1FmMIHfWm3E5LQa3JBH1CFy6NO4jI6DAQS__Ph0b__lQ/edit for more details
+//   - Check `https://docs.google.com/spreadsheets/d/1FmMIHfWm3E5LQa3JBH1CFy6NO4jI6DAQS__Ph0b__lQ/edit` for more details
 // Attacked At : Mainnet, block height 10592428, 2020-08-04T09:25:54Z
 // Vulnerability Type : Business Logic Flaw
 // Attacker : 0x915c2d6f571d3d47a182dd59d5f41e87d4c3fb8e
@@ -21,7 +21,7 @@ import "forge-std/Test.sol";
 //   - https://github.com/opynfinance/Convexity-Protocol-Archived/blob/master/contracts/OptionsContract.sol#L809
 //
 // Attack Txs :
-//   - Check https://etherscan.io/address/0x915C2D6f571d3d47A182Dd59D5F41e87d4c3fb8E for more details
+//   - Check `https://etherscan.io/address/0x915C2D6f571d3d47A182Dd59D5F41e87d4c3fb8E` for more details
 // @Ref
 // Official Announcement: https://medium.com/opyn/opyn-eth-put-exploit-c5565c528ad2
 // Official Post-Mortem : https://medium.com/opyn/opyn-eth-put-exploit-post-mortem-1a009e3347a8

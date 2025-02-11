@@ -947,6 +947,8 @@ https://rekt.news/harvest-finance-rekt/
 
 https://etherscan.io/tx/0x35f8d2f572fceaac9288e5d462117850ef2694786992a8c3f6d02612277b0877
 
+---
+
 ### 20200804 Opyn Protocol - Business Logic Flaw
 
 #### Lost: ~370k USD
@@ -957,7 +959,7 @@ forge test ./src/test/2020-08/Opyn_exp.sol --ignored-error-codes 3628 -vvv
 
 #### Contract
 
-[Opyn.exp.sol](../../src/test/2020-08/Opyn_exp.sol)
+[Opyn_exp.sol](../../src/test/2020-08/Opyn_exp.sol)
 
 #### Link reference
 
