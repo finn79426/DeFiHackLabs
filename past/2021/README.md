@@ -84,7 +84,7 @@
 
 [20200912 bzx](#20200912-bzx---incorrect-transfer)
 
-[20200804 Opyn Protocol](#20200804-opyn-protocol---msgValue-in-loop)
+[20200804 Opyn Protocol](#20200804-opyn-protocol---business-logic-flaw)
 
 [20200628 Balancer Protocol](#20200628-balancer-protocol---token-incompatible)
 
@@ -947,12 +947,12 @@ https://rekt.news/harvest-finance-rekt/
 
 https://etherscan.io/tx/0x35f8d2f572fceaac9288e5d462117850ef2694786992a8c3f6d02612277b0877
 
-### 20200804 Opyn Protocol - msgValue in loop
+### 20200804 Opyn Protocol - Business Logic Flaw
 
-Testing
+#### Lost: ~370k USD
 
 ```sh
-forge test --contracts ./src/test/2020-08/Opyn_exp.sol -vv
+forge test ./src/test/2020-08/Opyn_exp.sol --ignored-error-codes 3628 -vvv
 ```
 
 #### Contract
@@ -963,7 +963,7 @@ forge test --contracts ./src/test/2020-08/Opyn_exp.sol -vv
 
 https://medium.com/opyn/opyn-eth-put-exploit-post-mortem-1a009e3347a8
 
-https://etherscan.io/tx/0x56de6c4bd906ee0c067a332e64966db8b1e866c7965c044163a503de6ee6552a
+https://peckshield.medium.com/opyn-hacks-root-cause-analysis-c65f3fe249db
 
 ---
 
@@ -989,8 +989,10 @@ https://etherscan.io/tx/0x013be97768b702fe8eccef1a40544d5ecb3c1961ad5f87fee4d16f
 
 ### 20200618 Bancor Protocol - Access Control
 
+#### Lost: ~545k USD
+
 ```sh
-forge test --contracts ./src/test/2020-06/Bancor_exp.sol -vv
+forge test ./src/test/2020-06/Bancor_exp.sol -vvv
 ```
 
 #### Contract
@@ -1010,7 +1012,7 @@ https://medium.com/1inch-network/bancor-network-hack-2020-3c71444fd59d
 #### Lost: ~25m USD
 
 ```sh
-forge test ./src/test/2020-04/LendfMe_exp.sol -vv
+forge test ./src/test/2020-04/LendfMe_exp.sol -vvv
 ```
 
 #### Contract

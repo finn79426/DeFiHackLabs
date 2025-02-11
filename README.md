@@ -1159,7 +1159,7 @@ If you appreciate our work, please consider donating. Even a small amount helps 
 
 [20200912 bzx](past/2021/README.md#20200912-bzx---incorrect-transfer)
 
-[20200804 Opyn Protocol](past/2021/README.md#20200804-opyn-protocol---msgValue-in-loop)
+[20200804 Opyn Protocol](past/2021/README.md#20200804-opyn-protocol---business-logic-flaw)
 
 [20200628 Balancer Protocol](past/2021/README.md#20200628-balancer-protocol---token-incompatible)
 
