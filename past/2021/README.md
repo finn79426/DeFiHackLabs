@@ -82,7 +82,7 @@
 
 [20201026 Harvest Finance](#20201026-harvest-finance---flashloan-attack)
 
-[20200912 bzx](#20200912-bzx---incorrect-transfer)
+[20200912 bZx](#20200912-bzx---business-logic-flaw-incorrect-transfer-implementation)
 
 [20200804 Opyn Protocol](#20200804-opyn-protocol---business-logic-flaw)
 
@@ -779,23 +779,6 @@ https://bscscan.com/tx/0x5a504fe72ef7fc76dfeb4d979e533af4e23fe37e90b5516186d5787
 
 ---
 
-### 20200912 bzx - Incorrect transfer
-
-### Lost: 
-
-```sh
-forge test --contracts ./src/test/2020-09/bzx_exp.sol -vvv
-```
-#### Contract
-
-[bzx_exp.sol](../../src/test/2020-09/bzx_exp.sol)
-
-### Link reference
-
-https://twitter.com/0x000000000marc/status/1305354469354303488
-
----
-
 ### 20210308 DODO - Flashloan Attack
 
 #### Lost: $700,000
@@ -946,6 +929,24 @@ forge test --contracts ./src/test/2020-10/HarvestFinance_exp.sol -vv
 https://rekt.news/harvest-finance-rekt/
 
 https://etherscan.io/tx/0x35f8d2f572fceaac9288e5d462117850ef2694786992a8c3f6d02612277b0877
+
+---
+
+### 20200912 bZx - Business Logic Flaw (Incorrect Transfer Implementation)
+
+#### Lost: ~810m USD
+
+```sh
+forge test ./src/test/2020-09/bZx_exp.sol -vvv
+```
+
+#### Contract
+
+[bZx_exp.sol](../../src/test/2020-09/bZx_exp.sol)
+
+#### Link reference
+
+https://x.com/0xCommodity/status/1305354469354303488
 
 ---
 
