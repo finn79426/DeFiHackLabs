@@ -78,13 +78,13 @@
 
 [20201229 Cover Protocol](#20201229-cover-protocol)
 
-[20201121 Pickle Finance](#20201121-pickle-finance)
+[20201121 Pickle Finance](#20201121-pickle-finance---incorrect-input-validation--arbitrary-code-execution)
 
 [20201026 Harvest Finance](#20201026-harvest-finance---flashloan-attack)
 
 [20200912 bZx](#20200912-bzx---business-logic-flaw-incorrect-transfer-implementation)
 
-[20200804 Opyn Protocol](#20200804-opyn-protocol---business-logic-flaw)
+[20200804 Opyn Protocol](#20200804-opyn-protocol---business-logic-flaw-re-used-msgvalue)
 
 [20200628 Balancer Protocol](#20200628-balancer-protocol---token-incompatible)
 
@@ -887,14 +887,12 @@ https://slowmist.medium.com/a-brief-analysis-of-the-cover-protocol-hacked-event-
 
 ---
 
-### 20201121 Pickle Finance
+### 20201121 Pickle Finance - Incorrect Input Validation + Arbitrary Code Execution
 
-#### Lost: $20 million
-
-Testing
+#### Lost: ~19m USD
 
 ```sh
-forge test --contracts ./src/test/2020-11/Pickle_exp.sol -vv
+forge test ./src/test/2020-11/Pickle_exp.sol -vvv
 ```
 
 #### Contract
@@ -905,7 +903,9 @@ forge test --contracts ./src/test/2020-11/Pickle_exp.sol -vv
 
 https://github.com/banteg/evil-jar
 
-https://etherscan.io/tx/0xe72d4e7ba9b5af0cf2a8cfb1e30fd9f388df0ab3da79790be842bfbed11087b0
+https://peckshield.medium.com/pickle-incident-root-cause-analysis-5d73496ebc9f
+
+https://medium.com/blockapex/pickle-finance-hack-analysis-poc-69b621111c3f
 
 ---
 
@@ -950,7 +950,7 @@ https://x.com/0xCommodity/status/1305354469354303488
 
 ---
 
-### 20200804 Opyn Protocol - Business Logic Flaw
+### 20200804 Opyn Protocol - Business Logic Flaw (Re-used `msg.value`)
 
 #### Lost: ~370k USD
 
